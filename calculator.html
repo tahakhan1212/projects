@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        /* General page style */
+        body {
+            background-image: url(https://wallpapershome.com/images/pages/pic_h/225.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .big-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 1rem;
+            padding: 20px;
+        }
+
+        /* Calculator container */
+        .container {
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+
+
+        /* Input field */
+        input {
+            width: 100%;
+            padding: 20px;
+            font-size: 30px;
+            text-align: right;
+            border: none;
+            background-color: #34495e;
+            color: white;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Button grid layout */
+        .cal-btn {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Button styling */
+        button {
+            padding: 20px;
+            font-size: 24px;
+            border-radius: 10px;
+            border: none;
+            background-color: #16a085;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* Button hover effects */
+        button:hover {
+            background-color: #1abc9c;
+            transform: scale(1.1);
+        }
+
+        /* Clear button styling */
+        button:nth-child(17) {
+            background-color: #e74c3c;
+        }
+
+        button:nth-child(17):hover {
+            background-color: #c0392b;
+        }
+
+        /* Equal button styling */
+        button:nth-child(16) {
+            background-color: #f39c12;
+        }
+
+        button:nth-child(16):hover {
+            background-color: #e67e22;
+        }
+
+        /* Responsive Layout for smaller screens */
+        /* @media (max-width: 500px) {
+            .container {
+                width: 90%;
+            }
+
+            button {
+                padding: 15px;
+                font-size: 18px;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="big-container">
+        <div class="container">
+            <input type="text" id="inputBox" readonly>
+            <div class="cal-btn">
+                <button onclick="valuePass('1')">1</button>
+                <button onclick="valuePass('2')">2</button>
+                <button onclick="valuePass('3')">3</button>
+                <button onclick="valuePass('4')">4</button>
+                <button onclick="valuePass('5')">5</button>
+                <button onclick="valuePass('6')">6</button>
+                <button onclick="valuePass('7')">7</button>
+                <button onclick="valuePass('8')">8</button>
+                <button onclick="valuePass('9')">9</button>
+                <button onclick="valuePass('0')">0</button>
+                <button onclick="valuePass('+')">+</button>
+                <button onclick="valuePass('-')">-</button>
+                <button onclick="valuePass('*')">x</button>
+                <button onclick="valuePass('/')">/</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="clearVal()">C</button>
+                <button onclick="valuePass('.')">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById("inputBox");
+
+        function valuePass(number) {
+            display.value += number;
+        }
+
+        function clearVal() {
+            display.value = "";
+        }
+
+        function calculate() {
+            try {
+                display.value = eval(display.value);
+            } catch (e) {
+                display.value = "ERROR";
+            }
+        }
+    </script>
+
+</body>
+</html>

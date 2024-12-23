@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBOX GAME-PASS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #1db954;
+
+        }
+
+        nav i {
+            font-size: 50px;
+            color: #1db954;
+            transition: transform 0.3s;
+        }
+
+        nav i:hover {
+            transform: rotate(360deg);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-left: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1db954;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #1db954;
+        }
+
+        nav li {
+            transition: transform 0.3s;
+        }
+
+        nav li:hover {
+            transform: scale(1.2);
+        }
+
+        nav input {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #333;
+            color: #e0e0e0;
+            margin-left: auto;
+            transition: border-color 0.3s;
+        }
+
+        nav input:focus {
+            border-color: #1db954;
+            outline: none;
+        }
+
+        .hero {
+            background-image: url('https://png.pngtree.com/background/20230527/original/pngtree-3d-rendering-of-a-glowing-blue-matrix-of-cubes-picture-image_2755805.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e0e0e0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: heroFadeIn 2s ease-out;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            
+        }
+       
+
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: heroTextGlow 1.5s infinite alternate;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes heroTextGlow {
+            from {
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            }
+
+            to {
+                text-shadow: 0 0 20px #1db954, 0 0 30px #1db954;
+            }
+        }
+
+        .card2 {
+            background-color: #1db954;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            animation: cardBounce 1s ease;
+        }
+
+        @keyframes cardBounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card2 h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card2 p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card2 button {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1rem;
+        }
+
+        .card2 button:hover {
+            background-color: #ff007a;
+            transform: scale(1.1);
+        }
+
+        .card3 {
+            background-image: url('https://4kwallpapers.com/images/wallpapers/forza-horizon-5-xbox-series-x-and-series-s-xbox-one-pc-2560x1080-7579.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card4 {
+            background-color: #000000;
+            padding: 30px;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            animation: cardFadeIn 1s ease;
+            text-shadow: 4px 4px 20px white;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card4 h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card4 p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        #under {
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        .card5 {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #130f0f;
+            border-radius: 10px;
+            margin: 0;
+            height: 730px;
+            width: 100%;
+            flex-wrap: wrap;
+            animation: card5SlideIn 1s ease-out;
+        }
+
+        @keyframes card5SlideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .card5 .cards {
+            background-color: #000000;
+            color: #f3f3f3;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+            width: 30%;
+            height: 650px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+
+        .card5 .cards:hover {
+            transform: scale(1.05);
+            border: 2px solid #1db954;
+        }
+
+        .card5 .cards h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card5 .cards h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .card5 .cards button {
+            background-color: #1DB954;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1rem;
+            margin-top: 50px;
+            display: block;
+            width: 100%;
+        }
+
+        .card5 .cards button:hover {
+            background-color: #e6007d;
+            transform: scale(0.95);
+        }
+
+        .cardskbox {
+            text-align: left;
+            background-color: #121212;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            animation: boxGlow 1.5s infinite alternate;
+        }
+
+        @keyframes boxGlow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+
+        #box1 h1 {
+            background-color: #090909;
+            color: rgb(255, 136, 0);
+        }
+
+        #box2 {
+            color: #121212;
+            background-color: rgb(255, 204, 0);
+        }
+
+        #box3 {
+            background-color: whitesmoke;
+            color: #000000;
+        }
+
+        #off {
+            color: rgba(255, 255, 255, 0.37);
+        }
+
+        .fot {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #1db954;
+        }
+
+        .fot ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .fot a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .fot a:hover {
+            color: #ff007a;
+        }
+
+        .fot p {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .card5 {
+                flex-direction: column;
+            }
+
+            .card5 .cards {
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <i class="fa-brands fa-xbox" aria-hidden="true"></i>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">GAME PASS</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">FAQs</a></li>
+        </ul>
+        <input type="text" placeholder="SEARCH GAMES" aria-label="Search Games">
+    </nav>
+
+    <div class="hero">
+        <h1>Xbox Game Pass</h1>
+    </div>
+
+    <div class="card2">
+        <i class="fa-brands fa-xbox" aria-hidden="true"></i>
+        <h2>UNLEASH THE FUN</h2>
+        <p>Explore the latest games and conquer new worlds.</p>
+        <button>FOR PC GAMERS</button>
+        <button>FOR CONSOLE GAMERS</button>
+    </div>
+
+    <div class="card3"></div>
+
+    <div class="card5">
+        <div class="cards">
+            <div class="cardskbox" id="box1">
+                <h1>PREMIUM</h1>
+                <p>Experience all the benefits</p>
+            </div>
+            <h4>Monthly Games</h4>
+            <h4>Online Multiplayer</h4>
+            <h4>Exclusive Discounts</h4>
+            <h4>Exclusive Content</h4>
+            <h4>Cloud Storage</h4>
+            <h4>Share Play</h4>
+            <h4>Game Catalog</h4>
+            <h4>Ubisoft+ Classics</h4>
+            <h4>Classics Catalog</h4>
+            <h4>Game Trials</h4>
+            <h4>PS5 Cloud Streaming</h4>
+            <h4>Sony Pictures Catalog</h4>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="cards">
+            <div class="cardskbox" id="box2">
+                <h1>EXTRA</h1>
+                <p>Discover hundreds of games</p>
+            </div>
+            <h4>Monthly Games</h4>
+            <h4>Online Multiplayer</h4>
+            <h4>Exclusive Discounts</h4>
+            <h4>Exclusive Content</h4>
+            <h4>Cloud Storage</h4>
+            <h4>Share Play</h4>
+            <h4>Game Catalog</h4>
+            <h4>Ubisoft+ Classics</h4>
+            <h4 id="off">Classics Catalog</h4>
+            <h4 id="off">Game Trials</h4>
+            <h4 id="off">PS5 Cloud Streaming</h4>
+            <h4 id="off">Sony Pictures Catalog</h4>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="cards">
+            <div class="cardskbox" id="box3">
+                <h1>ESSENTIAL</h1>
+                <p>Monthly games, online multiplayer, and more</p>
+            </div>
+            <h4>Monthly Games</h4>
+            <h4>Online Multiplayer</h4>
+            <h4>Exclusive Discounts</h4>
+            <h4>Exclusive Content</h4>
+            <h4>Cloud Storage</h4>
+            <h4>Share Play</h4>
+            <h4 id="off">Game Catalog</h4>
+            <h4 id="off">Ubisoft+ Classics</h4>
+            <h4 id="off">Classics Catalog</h4>
+            <h4 id="off">Game Trials</h4>
+            <h4 id="off">PS5 Cloud Streaming</h4>
+            <h4 id="off">Sony Pictures Catalog</h4>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card4">
+        <h1>READY TO PLAY GAMES?</h1>
+        <p id="under">TERMS AND CONDITIONS</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laudantium. Modi ipsum aperiam iusto
+            perspiciatis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, necessitatibus eius corrupti unde excepturi
+            illum sunt sint maxime perspiciatis reprehenderit ab mollitia autem rem exercitationem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, consectetur. Aliquam corporis voluptates
+            tenetur, commodi adipisci enim dolorum velit. Obcaecati impedit commodi numquam sed dolores, quisquam
+            consequuntur aspernatur quam iusto?</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus officiis consequuntur, repudiandae fuga
+            iste, dicta similique doloremque quia hic cumque, pariatur sit quis fugit eius ea magnam dignissimos!
+            Dolores, magni?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, qui Lorem ipsum, dolor sit amet consectetur
+            adipisicing Lorem ipsum dolor sit amet consectetur.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, qui Lorem ipsum, dolor sit amet consectetur
+            adipisicing.</p>
+    </div>
+
+    <div class="fot">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">POLICIES</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i
+                class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/en/" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://discord.com/" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://www.snapchat.com/?original_referrer=www.google.com" target="_blank" aria-label="Snapchat"><i
+                class="fa-brands fa-snapchat"></i></a>
+        <p>&copy; 2024 Taha Sultan. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

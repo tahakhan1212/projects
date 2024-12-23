@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <title>Packages</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(14, 14, 14);
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .color {
+      color: #29d9d5;
+      margin: 20px 0;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 50px;
+      /* Space between the rows */
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .columns {
+      width: 45%;
+      /* 2 columns per row, 45% width */
+      margin: 15px;
+      padding: 15px;
+    }
+
+    .price {
+      list-style-type: none;
+      border: 1px solid #29d9d5;
+      margin: 0;
+      padding: 0;
+      transition: 0.3s;
+    }
+
+    .price:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .price .header {
+      background-color: rgba(116, 103, 103, 0.877);
+      color: rgb(218, 198, 195);
+      font-size: 25px;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .price li {
+      border-bottom: 1px solid rgb(255, 255, 255);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .price .grey {
+      background-color: rgb(228, 228, 228);
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 10px;
+    }
+
+    .button {
+      background-color: #0bd6aa;
+      color: rgba(22, 20, 20, 0.95);
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .color2 {
+      background-color: rgb(42, 173, 196);
+      color: aliceblue;
+      font-family: monospace;
+      font-size: 25px;
+      padding: 15px;
+    }
+
+    .color3 {
+      background-color: rgb(23, 168, 23);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 25px;
+      color: #fff;
+      padding: 15px;
+    }
+
+    .color4 {
+      background-color: rgb(128, 0, 128);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 25px;
+      color: #fff;
+      padding: 15px;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    a.home-link {
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(20, 241, 241, 0.781);
+      font-size: 35px;
+      padding: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .columns {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header-container">
+    <a href="destination.html" class="home-link"><b>Home Page</b></a>
+  </div>
+
+  <h2 class="color">Affordable Packages!</h2>
+
+  <div class="container">
+    <!-- First Row -->
+    <div class="row">
+      <!-- Family Tour -->
+      <div class="columns">
+        <ul class="price">
+          <li class="header"><i>Family Tour</i></li>
+          <li class="grey"><b>$1200 for 4 people</b></li>
+          <li class="grey">Beach Resort Getaway</li>
+          <li class="grey">National Park Camping</li>
+          <li class="grey">Amusement Park Adventure</li>
+          <li class="grey">Historical City Tour</li>
+          <li class="grey"><a href="contactus.html" class="button">Order Now!</a></li>
+        </ul>
+      </div>
+
+      <!-- Adventure Tour -->
+      <div class="columns">
+        <ul class="price">
+          <li class="color2"><b>Adventure Tour</b></li>
+          <li class="grey"><b>$800 per person</b></li>
+          <li class="grey">Mountain Hiking Expedition</li>
+          <li class="grey">WhiteWater Rafting Experience</li>
+          <li class="grey">Zip-Lining Through the Forest</li>
+          <li class="grey">Desert Safari Adventure</li>
+          <li class="grey"><a href="contactus.html" class="button">Order Now!</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Luxury Tour -->
+      <div class="columns">
+        <ul class="price">
+          <li class="color3">Luxury Tour</li>
+          <li class="grey"><b>$2500 Per Couple</b></li>
+          <li class="grey">Five-Star Resort Stay</li>
+          <li class="grey">Private Yacht Charter</li>
+          <li class="grey">Gourmet Dining Experience</li>
+          <li class="grey">Spa Retreat Package</li>
+          <li class="grey"><a href="contactus.html" class="button">Order Now!</a></li>
+        </ul>
+      </div>
+
+      <!-- Cultural Tour -->
+      <div class="columns">
+        <ul class="price">
+          <li class="color4">Cultural Tour</li>
+          <li class="grey"><b>$600 Per Person</b></li>
+          <li class="grey">Guided City Walking Tour</li>
+          <li class="grey">Local Cuisine Cooking Class</li>
+          <li class="grey">Traditional Art Workshop</li>
+          <li class="grey">Historical Site Exploration</li>
+          <li class="grey"><a href="contactus.html" class="button">Order Now!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
